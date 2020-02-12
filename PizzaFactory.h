@@ -5,10 +5,12 @@
 #ifndef PizzaFactory_h
 #define PizzaFactory_h
 
+#include <vector>
 #include "Pizza.h"
 #include "ThickCrustPizza.h"
 #include "ThinCrustPizza.h"
 #include "StuffedCrustPizza.h"
+#include "ToppingDecorator.h"
 
 class PizzaFactory {
 public:
@@ -17,6 +19,8 @@ public:
         ThickCrust,
         StuffedCrust
     };
+    
+    std::vector<ToppingDecorator> toppings;
 
     static Pizza* createPizza(PizzaType pizzaType) {
         switch(pizzaType) {
