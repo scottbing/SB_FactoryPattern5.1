@@ -9,7 +9,7 @@
 class Pizza {
 public:
     virtual float getPrice() = 0;
-    virtual std::string getDescription();
+    virtual std::string getDescription() = 0;
     virtual ~Pizza(){}; //Destructor
 };
 

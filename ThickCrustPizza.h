@@ -8,7 +8,7 @@
 #include "Pizza.h"
 class ThickCrustPizza : public Pizza {
 public:
-    virtual float getPrice() { return 8.5; };
+    virtual float getPrice() { return 9.5; };
     virtual std::string getDescription() { return "Thick Crust"; };
     virtual ~ThickCrustPizza(){};
 };
