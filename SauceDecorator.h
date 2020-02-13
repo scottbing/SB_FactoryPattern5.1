@@ -12,5 +12,6 @@ public:
     virtual std::string getDescription() = 0;
     ~SauceDecorator() {};
  };\
+
  #endif /* SauceDecorator_h */
 

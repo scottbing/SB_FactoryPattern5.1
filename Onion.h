@@ -1,5 +1,5 @@
 //
-//  OnionDecorator.h
+//  Onion.h
 //  SB_Factory51
 //
 //  Created by Scott Bing on 2/12/20.
@@ -20,4 +20,5 @@ public:
     virtual std::string getDescription() = 0;
     ~OnionDecorator() {};
  };\
+
  #endif /* OnionDecorator_h */
