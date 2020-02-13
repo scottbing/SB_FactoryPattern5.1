@@ -11,9 +11,17 @@ void pizzaInformation(PizzaFactory::PizzaType pizzaType) {
 }
 
 int main(int argc, const char * argv[]) {
-    pizzaInformation(PizzaFactory::ThinCrust);
-    pizzaInformation(PizzaFactory::ThickCrust);
-    pizzaInformation(PizzaFactory::StuffedCrust);
-
+    
+    // specify toppings
+    std::vector<std::string> toppings;
+    toppings.push_back("Mushroom");
+    toppings.push_back("Onion");
+    
+    Pizza* newPizza =  PizzaFactory::createPizza(PizzaFactory::ThinCrust,toppings);
+    std::cout << newPizza->getDescription() << std::endl;
+    delete newPizza;
+    
+    
+    
     return 0;
 }

@@ -14,13 +14,18 @@
 
 class PizzaFactory {
 public:
+    
     enum PizzaType {
         ThinCrust,
         ThickCrust,
         StuffedCrust
-    };
-    
+    } pizzaType;
+        
     std::vector<ToppingDecorator> toppings;
+    
+    // class prototype
+    PizzaFactory (PizzaType pt,std::vector<ToppingDecorator> tp) : pizzaType(pt), toppings(tp) {}
+
 
     static Pizza* createPizza(PizzaType pizzaType) {
         switch(pizzaType) {
@@ -34,6 +39,7 @@ public:
         throw "Invalid Pizza type.";
     }
 };
+
 #endif /* PizzaFactory_h */
 
 
