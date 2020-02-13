@@ -6,19 +6,18 @@
 //  Copyright © 2020 Scott Bing. All rights reserved.
 //
 
-#ifndef OnionDecorator_h
-#define OnionDecorator_h
+#ifndef Onion_h
+#define Onion_h
 
-#include "Pizza.h"
+#include "ToppingDecorator.h"
 
-class OnionDecorator : public Pizza {
+class Onion : public ToppingDecorator {
 public:
-    Pizza* tempPizza = 0;
-
-    OnionDecorator(Pizza* pizza) { tempPizza = pizza; };
-    virtual float getPrice() = 0;
-    virtual std::string getDescription() = 0;
-    ~OnionDecorator() {};
- };\
-
- #endif /* OnionDecorator_h */
+    Onion(Pizza* pizza):ToppingDecorator(pizza){};
+    float getPrice() { return 1.5 + tempPizza->getPrice(); };
+    std::string getDescription() {
+        return tempPizza->getDescription() + ", Onion";
+    };
+    ~Onion() {};
+ };
+#endif /* Onion h */

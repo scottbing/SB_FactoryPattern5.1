@@ -20,4 +20,5 @@ public:
     virtual std::string getDescription() = 0;
     ~OnionDecorator() {};
  };\
+
  #endif /* OnionDecorator_h */

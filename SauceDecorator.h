@@ -11,7 +11,7 @@ public:
     virtual float getPrice() = 0;
     virtual std::string getDescription() = 0;
     ~SauceDecorator() {};
- };\
+ };
 
  #endif /* SauceDecorator_h */
 

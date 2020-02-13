@@ -10,6 +10,7 @@
 #include "Pizza.h"
 #include "Onion.h"
 #include "Pepperoni.h"
+#include "Mushroom.h"
 #include "GreenChili.h"
 #include "AlfredoSauce.h"
 #include "TomatoSauce.h"
@@ -33,10 +34,11 @@ public:
         Onion,
         Mushroom,
         GreenChili,
-        TmatoSauce,
+        TomatoSauce,
         PestoSauce,
+        Pepperoni,
         AlfredoSauce
-    } topping;
+    } toppingType;
         
 
     static Pizza* createPizza(PizzaType pizzaType ) {
@@ -57,31 +59,35 @@ public:
         throw "Invalid Pizza type.";
     }
     
-    static Pizza* addToppings(Pizza& tempPizza, std::vector<ToppingType> toppings) {
+    static Pizza* addToppings(Pizza* tempPizza, std::vector<ToppingType> toppings) {
         
         // driving function
         for(std::vector<ToppingType>::iterator it = toppings.begin(); it != toppings.end(); ++it) {
-                    Pizza* tempPizza = addTopping(tempPizza*, it);
+                    Pizza* tempPizza = addTopping(tempPizza, *it);
                 }
         
-        return tempPizza*;
+        return tempPizza;
         
     }
     
-    static Pizza* addTopping(Pizza& tempPizza, ToppingType topping) {
-        switch(ToppingType) {
+    static Pizza* addTopping(Pizza* tempPizza, ToppingType toppingType) {
+        switch(toppingType) {
             case Onion:
-                return new Onion(tempPizza);
-            case GreenChili:
-                return new GreenChili(tempPizza);
-            case TomatoSauce:
-                return new TomatoSauce(tempPizza);
-            case PestoSauce:
-                return new PestoSauce(tempPizza);
-            case AlfredoSauce:
-                return new AlfredoSauce(tempPizza);
+                return new class Onion(tempPizza);
             case Pepperoni:
-                return new Pepperoni(tempPizza);
+                return new class Pepperoni(tempPizza);
+            case AlfredoSauce:
+                return new class AlfredoSauce(tempPizza);
+            case Mushroom:
+                return new class Mushroom(tempPizza);
+            case GreenChili:
+                return new class GreenChili(tempPizza);
+            case TomatoSauce:
+                return new class TomatoSauce(tempPizza);
+            case PestoSauce:
+                return new class PestoSauce(tempPizza);
+            
+            
         }
         throw "Invalid Topping type.";
     }
