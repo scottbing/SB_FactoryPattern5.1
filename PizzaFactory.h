@@ -61,9 +61,11 @@ public:
     
     static Pizza* addToppings(Pizza* tempPizza, std::vector<ToppingType> toppings) {
         
+        Pizza* returnPizza= nullptr;
+        
         // driving function
         for(std::vector<ToppingType>::iterator it = toppings.begin(); it != toppings.end(); ++it) {
-                    Pizza* tempPizza = addTopping(tempPizza, *it);
+                    tempPizza = addTopping(tempPizza, *it);
                 }
         
         return tempPizza;
